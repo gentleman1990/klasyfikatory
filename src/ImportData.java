@@ -1,5 +1,3 @@
-package main;
-
 import type.Iris;
 import type.TTOM;
 import type.TTOMGrafana;

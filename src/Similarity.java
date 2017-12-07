@@ -1,5 +1,3 @@
-package main;
-
 import type.Iris;
 import type.TTOM;
 import type.TTOMGrafana;
@@ -232,7 +230,7 @@ public class Similarity implements Comparable<Similarity> {
             }
         }
 
-        List<main.Similarity> quicksort = new Utils().quicksort(similarityList);
+        List<main.java.root.Similarity> quicksort = new Utils().quicksort(similarityList);
         Map<String, Integer> map = new HashMap<String, Integer>();
         try {
             if (numberOfNeighbours == 1) {

@@ -1,5 +1,3 @@
-package main;
-
 /**
  * Created by Jakub on 2016-06-13.
  */
@@ -30,7 +28,7 @@ public class Iris{
         this.sepalWidth = 3.5;
         this.petalWidth = 1.4;
         this.petaLength = 0.2;
-        this.specificClass = "main.Iris-setosa";
+        this.specificClass = "Iris-setosa";
     }
 
 
@@ -39,8 +37,8 @@ public class Iris{
 //        double similarity = 1000;
 //        double currentSim = 0;
 //        for (Object object : objectCollection) {
-//            if(object instanceof main.Iris) {
-//                main.Iris iris = (main.Iris)object;
+//            if(object instanceof Iris) {
+//                Iris iris = (Iris)object;
 //                switch (typeOfClassificator) {
 //                    case 0:
 //                        currentSim = calculateEuclidesSimilarity(iris);
@@ -61,17 +59,17 @@ public class Iris{
 //    }
 
 //    public String calculateSimilarityKNeighbors(Collection<Object> irisCollection, int typeOfClassificator, int numberOfNeighbours) {
-//        List<main.Similarity> similarityList = new ArrayList<>();
-//        for (main.Iris iris : irisCollection) {
+//        List<Similarity> similarityList = new ArrayList<>();
+//        for (Iris iris : irisCollection) {
 //            switch(typeOfClassificator) {
-//                case 0: similarityList.add(new main.Similarity(calculateEuclidesSimilarity(iris),iris.getSpecificClass()));break;
-//                case 1: similarityList.add(new main.Similarity(calculateTaxiSimilarity(iris),iris.getSpecificClass()));break;
-//                case 2: similarityList.add(new main.Similarity(calculateChebyshevSimilarity(iris),iris.getSpecificClass()));break;
-//                default: similarityList.add(new main.Similarity(calculateEuclidesSimilarity(iris),iris.getSpecificClass()));break;
+//                case 0: similarityList.add(new Similarity(calculateEuclidesSimilarity(iris),iris.getSpecificClass()));break;
+//                case 1: similarityList.add(new Similarity(calculateTaxiSimilarity(iris),iris.getSpecificClass()));break;
+//                case 2: similarityList.add(new Similarity(calculateChebyshevSimilarity(iris),iris.getSpecificClass()));break;
+//                default: similarityList.add(new Similarity(calculateEuclidesSimilarity(iris),iris.getSpecificClass()));break;
 //            }
 //        }
 //
-//        List<main.Similarity> quicksort = new utils.Utils().quicksort(similarityList);
+//        List<Similarity> quicksort = new utils.Utils().quicksort(similarityList);
 //        Map <String,Integer> map = new HashMap <String,Integer> ();
 //        try {
 //            if (numberOfNeighbours == 1) {
@@ -87,7 +85,7 @@ public class Iris{
 //        return "";
 //    }
 
-//    private void prepareMapWithTypeAndCount(int numberOfNeighbours, List<main.Similarity> quicksort, Map<String, Integer> map) {
+//    private void prepareMapWithTypeAndCount(int numberOfNeighbours, List<Similarity> quicksort, Map<String, Integer> map) {
 //        for (int i = 0; i < numberOfNeighbours; i++) {
 //            String specificType = quicksort.get(i).getSpecificClass();
 //            if(!map.containsKey(specificType))

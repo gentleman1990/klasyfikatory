@@ -1,4 +1,4 @@
-package main;
+import static utils.Utils.KFoldCrossValidation2;
 
 import type.TTOMGrafana;
 import utils.Utils;
@@ -34,8 +34,8 @@ public class Main {
 //        Collection<Object> testobjectCollection = new ImportData().importToCollection("C:\\Users\\socha\\Documents\\DaneTestowe\\", "ttom_data_grafana.csv");
         Collection<Object> testObjectCollection = new ImportData().importToCollection(args[0], args[1]);
 
-        Collection<Object> shuffleCollection = new Utils().shuffleCollection(testObjectCollection);
-        new Utils().KFoldCrossValidation2(shuffleCollection, Integer.parseInt(args[2]));
+        Collection<Object> shuffleCollection = Utils.shuffleCollection(testObjectCollection);
+        KFoldCrossValidation2(shuffleCollection, Integer.parseInt(args[2]));
 
 
         Collection<Object> freshObjectCollection = new ImportData().importToCollection(args[0], args[3]);
@@ -76,17 +76,17 @@ public class Main {
     }
 
 //
-//        new main.Similarity().calculateFieldWeight(testobjectCollection);
+//        new Similarity().calculateFieldWeight(testobjectCollection);
 //        new utils.Utils().test(shuffleCollection,0);
 
     //Calculate similarity expect as a second parameter classifier:
     //0 - Euclidesse
     //1 - Taxi metric
     //2 - Chebyshev distance
-//        main.Iris testIrisObject = new main.Iris(5.5,2.5,3.7,1.0);
-//        String potentiallyFlower = new main.Similarity().calculateSimilarity(testobjectCollection,testIrisObject,1);
+//        Iris testIrisObject = new Iris(5.5,2.5,3.7,1.0);
+//        String potentiallyFlower = new Similarity().calculateSimilarity(testobjectCollection,testIrisObject,1);
 //        System.out.println("Type of the flower: " + potentiallyFlower);
-//        String potentiallyFlowerAfterStandarization = new main.Similarity().calculateSimilarity(testIrisCollectionWithStandarization,testIrisObject,1);
+//        String potentiallyFlowerAfterStandarization = new Similarity().calculateSimilarity(testIrisCollectionWithStandarization,testIrisObject,1);
 //        System.out.println("Type of the flower after Standarization: " + potentiallyFlowerAfterStandarization);
 
 //        type.Wine testWineObject = new type.Wine(12.99,1.67,2.6,30,139,3.3,2.89,.21,1.96,3.35,1.31,3.5,985,"2");
@@ -100,14 +100,14 @@ public class Main {
 //        ut.calculateUnbiasedSampleStandardDeviation(testobjectCollection);
 //        ut.KFoldCrossValidation(1);
 //
-//        type.main.Iris testObject2 = new type.main.Iris(6.8,3.0,5.4,2.0);
+//        type.Iris testObject2 = new type.Iris(6.8,3.0,5.4,2.0);
 //        String potentiallyFlower2 = testObject2.calculateSimilarityKNeighbors(testIrisCollection,0,7);
 //        System.out.println("Type of the flower: " + potentiallyFlower2);
 
     //Euclidesse with standarization for 3 neighbour
     // Method calculateSimilarityKNeighbors parameters - collection of test data, test object, type of algorithm, number of neighbours
-//        main.Iris testObject3 = new main.Iris(6.8,3.0,5.4,2.0);
-//        String potentiallyFlower3 = new main.Similarity().calculateSimilarityKNeighbors(testIrisCollectionWithStandarization,testObject3,0,3);
+//        Iris testObject3 = new Iris(6.8,3.0,5.4,2.0);
+//        String potentiallyFlower3 = new Similarity().calculateSimilarityKNeighbors(testIrisCollectionWithStandarization,testObject3,0,3);
 //        System.out.println("Type of the flower: " + potentiallyFlower3);
 
     //K-fold cross-validation with standarization for Chebyshev

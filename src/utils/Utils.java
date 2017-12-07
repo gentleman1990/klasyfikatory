@@ -4,7 +4,7 @@ import type.Iris;
 import type.TTOM;
 import type.TTOMGrafana;
 import type.Wine;
-import main.Similarity;
+import Similarity;
 
 import java.beans.IntrospectionException;
 import java.lang.reflect.Field;
@@ -17,10 +17,10 @@ import java.util.*;
  */
 public class Utils {
 
-    double numberOfSample = 0;
-    double numberOfIncorrectResult = 0;
+    public static double numberOfSample = 0;
+    public static double numberOfIncorrectResult = 0;
 
-    public Collection<Object> shuffleCollection(Collection<Object> objectCollection){
+    public static Collection<Object> shuffleCollection(Collection<Object> objectCollection){
         Collection<Object> shuffledCollection = new ArrayList<>();
         List listObjectsCollection = new ArrayList(objectCollection);
         int newRandom;
@@ -40,7 +40,7 @@ public class Utils {
         return shuffledCollection;
     }
 
-    public void KFoldCrossValidation2(Collection<Object> shuffledObjectTestCollection,int specificAlgorithm) throws NoSuchObjectException, IllegalAccessException, IntrospectionException, InvocationTargetException {
+    public static void KFoldCrossValidation2(Collection<Object> shuffledObjectTestCollection,int specificAlgorithm) throws NoSuchObjectException, IllegalAccessException, IntrospectionException, InvocationTargetException {
         Collection<Object> KFoldTestCollection = new ArrayList<>();
         List listOfObjectCollection = new ArrayList(shuffledObjectTestCollection);
 
@@ -57,7 +57,7 @@ public class Utils {
         System.out.println("Number of sample: " +numberOfSample +"\nNumber of Incorrect result: "+ numberOfIncorrectResult +"\nError rate: " + round(numberOfIncorrectResult/numberOfSample*100,2));
     }
 
-    private void calculateKFoldForSpecificCollection(Collection<Object> objectTestCollection, Collection<Object> sampleCollection,int specificAlgorithm) throws NoSuchObjectException, IllegalAccessException, IntrospectionException, InvocationTargetException {
+    private static void calculateKFoldForSpecificCollection(Collection<Object> objectTestCollection, Collection<Object> sampleCollection,int specificAlgorithm) throws NoSuchObjectException, IllegalAccessException, IntrospectionException, InvocationTargetException {
         for (Object object : sampleCollection) {
             numberOfSample = numberOfSample + 1;
             if (object instanceof Iris) {
@@ -99,7 +99,7 @@ public class Utils {
         //System.out.println("Number of sample: " + numberOfSample +"\nNumber of incorrect result: " + numberOfIncorrectResult);
     }
 
-    public List<main.Similarity> quicksort(List<main.Similarity> input) {
+    public List<main.java.root.Similarity> quicksort(List<main.java.root.Similarity> input) {
 
         if (input.size() <= 1) {
             return input;
@@ -108,8 +108,8 @@ public class Utils {
         int middle = (int) Math.ceil((double) input.size() / 2);
         double pivot = input.get(middle).getSimilarity();
 
-        List<main.Similarity> less = new ArrayList<>();
-        List<main.Similarity> greater = new ArrayList<>();
+        List<main.java.root.Similarity> less = new ArrayList<>();
+        List<main.java.root.Similarity> greater = new ArrayList<>();
 
         for (int i = 0; i < input.size(); i++) {
             if (input.get(i).getSimilarity() <= pivot) {
@@ -124,9 +124,9 @@ public class Utils {
         return concatenate(quicksort(less), input.get(middle), quicksort(greater));
     }
 
-    private List<main.Similarity> concatenate(List<main.Similarity> less, main.Similarity pivot, List<main.Similarity> greater) {
+    private List<main.java.root.Similarity> concatenate(List<main.java.root.Similarity> less, main.java.root.Similarity pivot, List<main.java.root.Similarity> greater) {
 
-        List<main.Similarity> list = new ArrayList<>();
+        List<main.java.root.Similarity> list = new ArrayList<>();
 
         for (int i = 0; i < less.size(); i++) {
             list.add(less.get(i));
